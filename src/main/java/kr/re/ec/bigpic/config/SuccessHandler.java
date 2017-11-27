@@ -34,8 +34,6 @@ public class SuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     redirectStrategy.sendRedirect(request, response, targetUrl);
   }
 
-
-
   protected String determineTargetUrl(Authentication authentication) {
 
     String url = "";
@@ -47,6 +45,12 @@ public class SuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     for (GrantedAuthority a : authorities) {
       roles.add(a.getAuthority());
     }
+
+    System.out.println("role list start --- ");
+    for(String s : roles) {
+      System.out.println(s);
+    }
+    System.out.println("role list end --- ");
 
     if (isDba(roles)) {
       url = "/suadmin";
