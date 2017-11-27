@@ -12,11 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * This rest controller doesn't follow the best REST way because of convenience. Only one person will use
- * this API lol.
- * 
+ * This rest controller doesn't follow the best REST way because of convenience. Only one person
+ * will use this API lol.
  * @author Juho Kang (rjduakcjs@gmail.com)
- *
  */
 @RestController
 @RequestMapping("/rest")
@@ -24,8 +22,6 @@ public class DataRestController {
 
   @Autowired
   UserService userService;
-
- 
 
   @RequestMapping(value = "/user", method = RequestMethod.GET)
   public List<User> getAllUsers() {

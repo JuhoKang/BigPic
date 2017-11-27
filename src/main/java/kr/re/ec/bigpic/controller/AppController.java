@@ -44,7 +44,9 @@ public class AppController {
   }
 
   @RequestMapping(value = {"/index"}, method = RequestMethod.GET)
-  public String indexPage(ModelMap model) { return "index"; };
+  public String indexPage(ModelMap model) {
+    return "index";
+  }
 
   @RequestMapping(value = {"/nosuchpage"}, method = RequestMethod.GET)
   public String noSuchPage(ModelMap model) {
@@ -86,7 +88,6 @@ public class AppController {
 
     return "registsuccess";
   }
-
 
   @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
   public String accessDeniedPage(ModelMap model) {

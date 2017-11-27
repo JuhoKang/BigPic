@@ -17,5 +17,5 @@ public class AppConfig {
     messageSource.setBasename("messages");
     return messageSource;
   }
-  
+
 }

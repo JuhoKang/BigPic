@@ -11,8 +11,6 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 public class AppInitializer implements WebApplicationInitializer {
 
-
-
   public void onStartup(ServletContext container) throws ServletException {
 
     System.out.println("on startup");
@@ -25,10 +23,10 @@ public class AppInitializer implements WebApplicationInitializer {
     CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
     characterEncodingFilter.setEncoding("UTF-8");
     characterEncodingFilter.setForceEncoding(true);
-    
+
     container.addFilter("encoding-filter", characterEncodingFilter).addMappingForUrlPatterns(null,
         false, "/*");
-    
+
     ServletRegistration.Dynamic servlet =
         container.addServlet("dispatcher", new DispatcherServlet(ctx));
 

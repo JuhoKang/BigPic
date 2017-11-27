@@ -43,9 +43,9 @@ public class InitializeApp {
     Session session;
 
     try {
-        session = sessionFactory.getCurrentSession();
+      session = sessionFactory.getCurrentSession();
     } catch (HibernateException e) {
-        session = sessionFactory.openSession();
+      session = sessionFactory.openSession();
     }
     return session;
   }

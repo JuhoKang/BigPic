@@ -1,19 +1,18 @@
 package kr.re.ec.bigpic.config;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 //redirection for spring security
 @Component
@@ -23,7 +22,7 @@ public class SuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
   @Override
   protected void handle(HttpServletRequest request, HttpServletResponse response,
-      Authentication authentication) throws IOException {
+                        Authentication authentication) throws IOException {
     String targetUrl = determineTargetUrl(authentication);
 
     if (response.isCommitted()) {
@@ -47,7 +46,7 @@ public class SuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     }
 
     System.out.println("role list start --- ");
-    for(String s : roles) {
+    for (String s : roles) {
       System.out.println(s);
     }
     System.out.println("role list end --- ");
@@ -61,7 +60,7 @@ public class SuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     } else {
       url = "/accessDenied";
     }
-    
+
     return url;
   }
 
