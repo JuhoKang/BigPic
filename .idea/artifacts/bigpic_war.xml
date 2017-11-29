@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bigpic:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="exerciseboard.war">
+      <element id="artifact" artifact-name="bigpic:war exploded" />
+    </root>
+  </artifact>
+</component>
