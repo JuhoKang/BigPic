@@ -86,7 +86,7 @@ public class AppController {
     System.out.println("UserProfile type is : " + UserProfileType.USER.toString());
     userService.setUserAuth(user.getSsoId(), UserProfileType.USER.toString());
 
-    return "registsuccess";
+    return "redirect:" + "/index";
   }
 
   @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
@@ -104,7 +104,9 @@ public class AppController {
     if (!(auth instanceof AnonymousAuthenticationToken)) {
       return "redirect:" + "/index";
     }
-
+    User user = new User();
+    model.addAttribute("user", user);
+    model.addAttribute("edit", false);
     return "login";
   }
 
