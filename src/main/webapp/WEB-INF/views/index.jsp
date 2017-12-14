@@ -29,12 +29,10 @@
             src="<c:url value="/resources/interact/interact.js"/>"></script>
 </head>
 <body>
-
-<body>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"><a class="navbar-brand" href="/">Big-Picture</a>
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="/users/signin">로그인</a></li>
+        <li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
     </ul>
 </nav>
 <script>
@@ -76,8 +74,6 @@
         })
     })
 </script>
-</body>
-
 <div class="draggable" id="drag-1"
      style="position:fixed; z-index:1000; border-style:solid; border-color:black; background-color:#f8f9fa !important">
     <!--button.btn(onclick='hideFunction()') x-->
@@ -188,34 +184,34 @@
                     </div>
                 </div>
             </div>
-            <div id="sidebar"></div>
+            <div id="sidebar">
+                <div class="sidebar1">
+                    <input type="hidden" value="비회원" id="namebox"/>
+                    <input type="hidden" value="" id="roombox"/>
+                    <input type="hidden" id="uid"/>
+                    <div class="row margin-zero side-header">
+
+                        <div class="logo">
+                            <h4>비회원</h4>
+                        </div>
+                    </div>
+                    <div class="row margin-zero">
+                        <div style="margin:1px;" class="side-option-btn">
+                            <button style="width:100%;" class="btn btn-info all-chatting">채팅방</button>
+                        </div>
+                    </div>
+                    <div id="msgcontainer" class="left-navigation">
+                        <ul id="msgs" class="list"></ul>
+                    </div>
+                    <div class="footer">
+                        <input id="msgbox" type="text"/>
+                        <button id="msgenter" class="btn btn-info">입력</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-<div class="sidebar1">
-    <input type="hidden" value="비회원" id="namebox"/>
-    <input type="hidden" value="" id="roombox"/>
-    <input type="hidden" id="uid"/>
-    <div class="row margin-zero side-header">
-        <div class="logo"><img class="img-responsive center-block" alt="profile" style="width:35px; height:35px"/>
-        </div>
-        <div class="logo">
-            <h4>비회원</h4>
-        </div>
-    </div>
-    <div class="row margin-zero">
-        <div class="side-option-btn" style="margin:1px">
-            <button class="btn btn-info all-chatting" style="width:100%">채팅방</button>
-        </div>
-    </div>
-    <div class="left-navigation" id="msgcontainer">
-        <ul class="list" id="msgs"></ul>
-    </div>
-    <div class="footer">
-        <input id="msgbox" type="text"/>
-        <button class="btn btn-info" id="msgenter">입력</button>
-    </div>
-</div>
 <script>
     $('#chatting-btn').click(function () {
         if ($(this).val() == "off") {
@@ -235,9 +231,6 @@
         }
     });
 </script>
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
         integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
         crossorigin="anonymous"></script>
@@ -262,5 +255,7 @@
         src="<c:url value="/resources/app/map-view.js"/>"></script>
 <script type="text/javascript"
         src="<c:url value="/resources/app/shortcut.js"/>"></script>
+<script type="text/javascript"
+        src="<c:url value="/resources/app/chatting.js"/>"></script>
 </body>
 </html>
